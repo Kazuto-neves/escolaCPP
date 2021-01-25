@@ -13,23 +13,23 @@ class Funcionario:public Pessoa {
     double salario;
 
     public:
-    const char* getDepartamento() {return departamento;}
+    Funcionario(){}
+    Funcionario(const char* departamento,double salario){
+        this->setDepartamento(departamento);
+        this->setSalario(salario);
+    }
+    const char* getDepartamento() {return departamento;}/****/void setDepartamento(const char* d) {departamento = d;}
 
-    void setDepartamento(const char* d) {departamento = d;}
+    double getSalario() {return salario;}/****/void setSalario(double s) {salario = s;}
 
-    double getSalario() {return salario;}
-
-    void setSalario(double s) {salario = s;}
-
-    const char* dados() override{return ("Funcionario: %c",getNome());}
-
-    void mudarDepartamento(const char* d){departamento = d;}
+    const char* dados() override{return ("Funcionario: %c",getNome());}/****/void mudarDepartamento(const char* d){departamento = d;}
 
     void mostrarFuncionario() {
         cout << "Funcionario:" << getNome() << endl;
         cout << "Departamento:" << departamento << endl;
         cout << "Salario:" << salario << endl;
     }
+
 };
 
 #endif // !_CLASS_FUNCIONARIO_H_

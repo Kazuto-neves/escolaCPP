@@ -5,8 +5,6 @@
 #include "pessoa.h"
 
 using namespace std;
-
-
 class Professor:public Pessoa{
     private:
     const char* disciplina;
@@ -14,18 +12,18 @@ class Professor:public Pessoa{
     double salarioporaula;
 
     public:
-    const char* getDisciplina() {return disciplina;}
+        Professor(){};
+        Professor(const char* disciplina,int numdeaulas,double salarioporaula){
+            this->setDisciplina(disciplina);
+            this->setNumdeaulas(numdeaulas);
+            this->setSalarioporaula(salarioporaula);
+        }
+    const char* getDisciplina() {return disciplina;}/****/void setDisciplina(const char* d) {disciplina = d;}
 
-    void setDisciplina(const char* d) {disciplina = d;}
+    int getNumdeaulas() {return numdeaulas;}/****/void setNumdeaulas(int nda) {numdeaulas = nda;}
 
-    int getNumdeaulas() {return numdeaulas;}
-
-    void setNumdeaulas(int nda) {numdeaulas = nda;}
-
-    double getSalarioporaula() {return salarioporaula;}
-
-    void setSalarioporaula(double spa) {salarioporaula = spa;}
-
+    double getSalarioporaula() {return salarioporaula;}/****/void setSalarioporaula(double spa) {salarioporaula = spa;}
+    
     const char* dados() override {return ("Professor: %c",getNome());}
 
     void mostrarProfessor() {

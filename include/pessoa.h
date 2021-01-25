@@ -12,10 +12,15 @@ class Pessoa {
         const char* nome;
         int codigo;
     public:
-        const char* getCpf() {return cpf;}
-        void setCpf(const char* c) {cpf=c;}
-        const char* getNome() {return nome;}void setNome(const char* n) {nome=n;}
-        int getCodigo() {return codigo;}void setCodigo(int id) {codigo =id;}
+        Pessoa(){};
+        Pessoa(int codigo,const char* cpf,const char* nome){
+            this->setCpf(cpf);
+            this->setNome(nome);
+            this->setCodigo(codigo);
+        }
+        const char* getCpf() {return cpf;}/****/void setCpf(const char* c) {cpf=c;}
+        const char* getNome() {return nome;}/****/void setNome(const char* n) {nome=n;}
+        int getCodigo() {return codigo;}/****/void setCodigo(int id) {codigo =id;}
 
         virtual const char* dados() {return ("Pessoa: %c", nome);}
 
@@ -25,7 +30,6 @@ class Pessoa {
             cout << "CPF:" << cpf << endl;
             cout << "----------------" << endl;
     }
-
 };
 
 #endif // !_CLASS_PESSOA_H_

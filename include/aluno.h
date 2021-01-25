@@ -10,27 +10,25 @@ class Aluno:public Pessoa {
 
     private:
     const char* matricula;
-    double not1;
-    double not2;
-    double media;
+    double not1,not2,media;
 
     public:
 
-    const char* getMatricula() {return matricula;}
+    Aluno(){}
+    Aluno(const char* matricula,double not1,double not2,double media){
+        this->setMatricula(matricula);
+        this->setNot1(not1);
+        this->setNot2(not2);
+        this->setMedia(media);
+    }
 
-    void setMatricula(const char* m) {matricula = m;}
+    const char* getMatricula() {return matricula;}/****/void setMatricula(const char* m) {matricula = m;}
 
-    double getNot1() {return not1;}
+    double getNot1() {return not1;}/****/void setNot1(double n1) {not1 = n1;}
 
-    void setNot1(double n1) {not1 = n1;}
+    double getNot2() {return not2;}/****/void setNot2(double n2) {not2 = n2;}
 
-    double getNot2() {return not2;}
-
-    void setNot2(double n2) {not2 = n2;}
-
-    double getMedia() {return media;}
-
-    void setMedia(double m) {media = m;}
+    double getMedia() {return media;}/****/void setMedia(double m) {media = m;}
 
     const char* dados() override{return ("Aluno %c:",getNome());}
 
