@@ -3,19 +3,21 @@
 
 #include <iostream>
 #include "pessoa.h"
+#include "disciplina.h"
 
 using namespace std;
 
-class Aluno:public Pessoa {
-
+class Aluno:public Pessoa,public disciplina{
     private:
     const char* matricula;
+    disciplina D;
     double not1,not2,media;
 
     public:
 
     Aluno(){}
-    Aluno(const char* matricula,double not1,double not2,double media){
+    Aluno(const char* matricula,disciplina D,double not1,double not2,double media){
+        this->D;
         this->setMatricula(matricula);
         this->setNot1(not1);
         this->setNot2(not2);

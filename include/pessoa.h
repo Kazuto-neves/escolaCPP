@@ -12,11 +12,11 @@ class Pessoa {
         const char* nome;
         int codigo;
     public:
-        Pessoa(){};
-        Pessoa(int codigo,const char* cpf,const char* nome){
-            this->setCpf(cpf);
-            this->setNome(nome);
+        Pessoa(){}
+        Pessoa(const char* cpf,const char* nome,int codigo){
             this->setCodigo(codigo);
+            this->setNome(nome);
+            this->setCpf(cpf);
         }
         const char* getCpf() {return cpf;}/****/void setCpf(const char* c) {cpf=c;}
         const char* getNome() {return nome;}/****/void setNome(const char* n) {nome=n;}
@@ -30,6 +30,7 @@ class Pessoa {
             cout << "CPF:" << cpf << endl;
             cout << "----------------" << endl;
     }
+
 };
 
 #endif // !_CLASS_PESSOA_H_

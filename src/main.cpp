@@ -4,12 +4,14 @@
 #include "professor.h"
 #include "funcionario.h"
 #include "aluno.h"
+#include "disciplina.h"
 
 using namespace std;
 
     int main(){
         setlocale(LC_ALL, "Portuguese");
         Pessoa *P = new Pessoa();
+        disciplina *D = new disciplina();
         Aluno *A = new Aluno();
         Professor *Pr = new Professor();
         Funcionario *F = new Funcionario();
@@ -21,8 +23,14 @@ using namespace std;
 
         cout << endl;
 
+        D->setDisciplina(21);
+        D->setNomeD("PRC");
+        D->setPeso(2.0);
+        D->mostrarDiciplina();
+
+        Pr->setIdProf(24565454);
         Pr->setNome("Patricia");
-        Pr->setDisciplina("Programação");
+        //Pr->setDisciplina(21);
         Pr->setNumdeaulas(10);
         Pr->setSalarioporaula(100);
         Pr->mostrarProfessor();
@@ -55,6 +63,7 @@ using namespace std;
 
         cout << endl;
 
+        cout << "***" << D->dados() << endl;
         cout << "***" << A->dados() << endl;
         cout << "***" << P->dados() << endl;
         cout << "***" << Pr->dados() << endl;
